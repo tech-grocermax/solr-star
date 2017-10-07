@@ -29,3 +29,6 @@ solr/easyshop_autosuggest/data/
 solr/easyshop_autosuggest/tlog/
 solr/trending_search/data/index/
 solr/trending_search/data/tlog/
+
+#ingnore solr-webapp
+solr-webapp
