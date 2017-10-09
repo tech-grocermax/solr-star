@@ -24,4 +24,4 @@ hs_err_pid*
 #ignore data file
 gmax_products/data
 easyshop_products/data
-solr/trending_search/data
+trending_search/data
