@@ -26,4 +26,4 @@ Television, Televisions, TV, TVs
 
 # Synonym mappings can be used for spelling correction too
 pixima => pixma
-
+oil,Mustard Oil,Refined Oil,Soyabean Oil,Olive Oil,Sunflower Oil,Vegetable Oil,Ground Nut Oil,Canola Oil

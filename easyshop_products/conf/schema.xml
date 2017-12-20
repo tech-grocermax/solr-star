@@ -105,11 +105,40 @@
 <field name="cart_image" type="string" indexed="false" stored="true" multiValued="false"/>
 <field name="url_path" type="string" indexed="false" stored="true"/>
 
+<field name="item_name" type="text_en_splitting" indexed="true" stored="true" multiValued="false"/>
+<field name="item_trems" type="int" indexed="true" stored="true" multiValued="false"/>
+
+<field name="titleExact" type="textExact" indexed="true" stored="true" />
+
+<field name="deal_id" type="int" indexed="true" stored="true" default="0"/>
+<field name="promo_type" type="string" indexed="true" stored="true"/>
+<field name="whatsnew" type="int" indexed="true" stored="true" default="0"/>
+<field name="didyoumissed" type="int" indexed="true" stored="true" default="0"/>
+<field name="manual_boost" type="int" indexed="true" stored="true" default="0"/>
+<field name="addtocart" type="int" indexed="true" stored="true" default="0"/>
+<field name="special_promo" type="string" indexed="true" stored="true"/>
+
+
+
 <uniqueKey>unique_item_id</uniqueKey>
 <defaultSearchField>name</defaultSearchField>
 
 <copyField source="name" dest="name_alias_name"/>
 <copyField source="productalias" dest="name_alias_name"/>
+
+
+<fieldType name="textExact" class="solr.TextField" positionIncrementGap="100" >
+   <analyzer type="index">
+   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+   <filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="20"/>
+   <filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+<analyzer type="query">
+   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+   <filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="20"/>
+   <filter class="solr.LowerCaseFilterFactory"/>
+</analyzer>
+</fieldType>
 
 
 <fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100">
